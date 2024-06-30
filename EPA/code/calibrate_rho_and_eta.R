@@ -8,6 +8,7 @@
 ## clear workspace
 rm(list = ls())
 gc()
+setwd("C:/Users/karan/Documents/repos/scghg/EPA")
 
 ## this function will check if a package is installed, and if not, install it
 list.of.packages <- c('tidyverse', 'data.table', 

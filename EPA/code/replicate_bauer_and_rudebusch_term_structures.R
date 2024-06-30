@@ -8,6 +8,7 @@
 ## clear workspace
 rm(list = ls())
 gc()
+setwd("C:/Users/karan/Documents/repos/scghg/EPA")
 
 ## this function will check if a package is installed, and if not, install it
 list.of.packages <- c('tidyverse')
@@ -20,7 +21,7 @@ lapply(list.of.packages, library, character.only = TRUE)
 ##########################
 
 ## near term starting rates
-r0s = c(0.015, 0.02, 0.025)
+r0s = c(0.01, 0.015, 0.02, 0.025, 0.03, 0.035)
 
 ## simulate rates for N=10,000 trials out tt=500 years
 N  = 1e4
