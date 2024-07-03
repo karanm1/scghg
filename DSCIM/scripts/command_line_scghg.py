@@ -1,3 +1,4 @@
+# Install xarray, netcdf4, dscim, inquirer, pyfiglet
 import xarray as xr
 import dscim
 import yaml
@@ -36,7 +37,12 @@ CAMEL_v = f"CAMEL_m{mortality_v}_c{coastal_v}"
 
 discount_conversion_dict = {'1.016010255_9.149608e-05': '1.5% Ramsey',
                             '1.244459066_0.00197263997': '2.0% Ramsey',
-                            '1.421158116_0.00461878399': '2.5% Ramsey'}   
+                            '1.421158116_0.00461878399': '2.5% Ramsey',
+                            '1.567899403_0.00770271064': '3.0% Ramsey',
+                            '1.016010255_0': '1.5% Ramsey, 0 rho',
+                            '1.244459066_0': '2.0% Ramsey, 0 rho',
+                            '1.421158116_0': '2.5% Ramsey, 0 rho',
+                            '1.567899403_0': '3.0% Ramsey, 0 rho'}   
 gas_conversion_dict = {'CO2_Fossil':'CO2',
                        'N2O':'N2O',
                        'CH4':'CH4'} 
@@ -372,7 +378,7 @@ def epa_scghgs(sectors,
             conf_savename = re.split('\.', conf_name)[0] + "-"
         else:
             conf_savename = ""
-        gases = ['CO2','CH4', 'N2O']
+        gases = ['CO2']
         if uncollapsed:    
             for gas in gases:
                 out_dir = Path(conf['save_path']) / f"{'territorial_us' if terr_us else 'global'}_scghgs" / 'full_distributions' / gas 
@@ -448,10 +454,35 @@ questions = [
                 '2.5% Ramsey',
                 [1.421158116, 0.00461878399]
             ),
+            (
+                '3.0% Ramsey',
+                [1.567899403, 0.00770271064]
+            ),
+            (
+                '1.5% Ramsey, 0 rho',
+                [1.016010255, 0]
+            ),
+            (
+                '2.0% Ramsey, 0 rho',
+                [1.244459066, 0]
+            ),
+            (
+                '2.5% Ramsey, 0 rho',
+                [1.421158116, 0]
+            ),
+            (
+                '3.0% Ramsey, 0 rho',
+                [1.567899403, 0]
+            ),
     ],
         default = [[1.016010255, 9.149608e-05],
                    [1.244459066, 0.00197263997],
-                   [1.421158116, 0.00461878399]]),
+                   [1.421158116, 0.00461878399],
+                   [1.567899403, 0.00770271064],
+                   [1.016010255, 0],
+                   [1.244459066, 0],
+                   [1.421158116, 0],
+                   [1.567899403, 0]]),
     inquirer.Checkbox("pulse_year",
         message= 'Select pulse years',
         choices= [
@@ -522,7 +553,7 @@ if len(etas_rhos) == 0:
     raise ValueError('You must select at least one eta, rho combination')
 
 risk_combos = [['risk_aversion', 'euler_ramsey']] # Default
-gases = ['CO2_Fossil', 'CH4', 'N2O'] # Default
+gases = ['CO2_Fossil'] # Default
 epa_scghgs(sector,
          terr_us,
          etas_rhos,

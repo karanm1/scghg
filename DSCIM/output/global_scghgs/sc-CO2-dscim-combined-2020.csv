@@ -1,4 +1,9 @@
 discount_rate,menu_option,sector,weitzman_parameter,discount_type,simulation,scghg
 1.5% Ramsey,risk_aversion,combined,0.5,euler_ramsey,0,334.64746677707825
+"1.5% Ramsey, 0 rho",risk_aversion,combined,0.5,euler_ramsey,0,340.1936982671207
 2.0% Ramsey,risk_aversion,combined,0.5,euler_ramsey,0,191.25919508093665
+"2.0% Ramsey, 0 rho",risk_aversion,combined,0.5,euler_ramsey,0,267.50133263388665
 2.5% Ramsey,risk_aversion,combined,0.5,euler_ramsey,0,108.76475391264138
+"2.5% Ramsey, 0 rho",risk_aversion,combined,0.5,euler_ramsey,0,229.06493352627865
+3.0% Ramsey,risk_aversion,combined,0.5,euler_ramsey,0,62.959038293437764
+"3.0% Ramsey, 0 rho",risk_aversion,combined,0.5,euler_ramsey,0,204.2702335333279
