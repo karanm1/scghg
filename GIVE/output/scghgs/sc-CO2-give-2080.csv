@@ -1,16 +1,41 @@
 "sector","discount_rate","scghg"
-"cromar_mortality","1.5% Ramsey",253
-"agriculture","2.0% Ramsey",171
-"slr","2.0% Ramsey",3
-"energy","2.0% Ramsey",17
 "slr","2.5% Ramsey",2
-"agriculture","2.5% Ramsey",129
-"total","2.5% Ramsey",257
-"total","2.0% Ramsey",356
-"cromar_mortality","2.5% Ramsey",115
+"total","2.5% Ramsey",256
+"agriculture","3.0% Ramsey",98
+"slr","3.0% Ramsey",2
+"cromar_mortality","3.0% Ramsey",84
+"cromar_mortality","2.0% Ramsey",166
+"total","1.5% Ramsey, 0 rho",517
+"energy","1.5% Ramsey, 0 rho",27
+"total","1.5% Ramsey",512
+"agriculture","2.0% Ramsey, 0 rho",202
+"total","2.5% Ramsey, 0 rho",382
+"slr","1.5% Ramsey, 0 rho",4
+"agriculture","3.0% Ramsey, 0 rho",182
+"energy","2.5% Ramsey, 0 rho",18
+"cromar_mortality","2.0% Ramsey, 0 rho",199
+"agriculture","1.5% Ramsey, 0 rho",231
+"agriculture","2.5% Ramsey",127
+"energy","3.0% Ramsey",8
+"total","3.0% Ramsey, 0 rho",359
+"cromar_mortality","1.5% Ramsey",253
 "energy","2.5% Ramsey",11
 "energy","1.5% Ramsey",26
-"total","1.5% Ramsey",515
-"cromar_mortality","2.0% Ramsey",165
-"agriculture","1.5% Ramsey",232
+"slr","2.0% Ramsey, 0 rho",4
+"slr","2.5% Ramsey, 0 rho",4
+"slr","3.0% Ramsey, 0 rho",4
 "slr","1.5% Ramsey",4
+"energy","2.0% Ramsey, 0 rho",21
+"total","2.0% Ramsey, 0 rho",425
+"agriculture","2.0% Ramsey",169
+"cromar_mortality","2.5% Ramsey",116
+"cromar_mortality","1.5% Ramsey, 0 rho",256
+"energy","2.0% Ramsey",17
+"agriculture","2.5% Ramsey, 0 rho",188
+"slr","2.0% Ramsey",3
+"cromar_mortality","2.5% Ramsey, 0 rho",172
+"total","2.0% Ramsey",354
+"total","3.0% Ramsey",192
+"cromar_mortality","3.0% Ramsey, 0 rho",157
+"agriculture","1.5% Ramsey",229
+"energy","3.0% Ramsey, 0 rho",16

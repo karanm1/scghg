@@ -10,7 +10,7 @@ Pkg.activate(joinpath(@__DIR__, ".."));
 Pkg.instantiate();
 
 ## precompile
-using Mimi, MimiGIVE, MimiRFFSPs, DataDeps, Random, CSV, DataFrames, Statistics;
+using Mimi, MimiGIVE, MimiRFFSPs, DataDeps, Random, CSV, DataFrames, Statistics, Distributed;
 
 ## automatically download data dependancies (rffsps)
 ENV["DATADEPS_ALWAYS_ACCEPT"] = "true"
@@ -33,14 +33,19 @@ years = [2020, 2030, 2040, 2050, 2060, 2070, 2080];
 damages = :give;
 
 ## choose gas
-gases = [:CO2, :CH4, :N2O];
+gases = [:CO2];
 
 ## set named list of discount rates
 discount_rates = 
     [
         (label = "1.5% Ramsey", prtp = exp(0.000091496)-1, eta  = 1.016010261),
         (label = "2.0% Ramsey", prtp = exp(0.001972641)-1, eta  = 1.244459020),
-        (label = "2.5% Ramsey", prtp = exp(0.004618785)-1, eta  = 1.421158057)
+        (label = "2.5% Ramsey", prtp = exp(0.004618785)-1, eta  = 1.421158057),
+        (label = "3.0% Ramsey", prtp = exp(0.00770271064)-1, eta  = 1.567899403),
+        (label = "1.5% Ramsey, 0 rho", prtp = 0, eta  = 1.016010261),
+        (label = "2.0% Ramsey, 0 rho", prtp = 0, eta  = 1.244459020),
+        (label = "2.5% Ramsey, 0 rho", prtp = 0, eta  = 1.421158057),
+        (label = "3.0% Ramsey, 0 rho", prtp = 0, eta  = 1.567899403)
     ];
 
 ## choose the model objects that you would like to save by uncommenting the lines (optional).
@@ -79,7 +84,7 @@ pricelevel_2005_to_2020 = 113.648/87.504;
 ######################################
 
 ## add procs 
-addprocs(21);
+addprocs(7);
 
 ## distribute packages
 @everywhere using Pkg;
